@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tsp.test.view.ViewShowActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="自定义输入框" />
+
+    <com.tsp.android.hiui.view.InputItemLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:bottomLineAppearance="@style/leftMargin_lineAppearance"
+        app:hint="请输入用户名"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="text"
+        app:title="用户名"
+        android:paddingLeft="16dp"
+        app:titleTextAppearance="@style/titleTextAppearance"
+        app:topLineAppearance="@style/lineAppearance" />
+
+    <com.tsp.android.hiui.view.InputItemLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="16dp"
+        app:bottomLineAppearance="@style/lineAppearance"
+        app:hint="请输入密码"
+        app:inputTextAppearance="@style/inputTextAppearance"
+        app:inputType="password"
+        app:title="密码"
+        app:titleTextAppearance="@style/titleTextAppearance" />
+
+</LinearLayout>

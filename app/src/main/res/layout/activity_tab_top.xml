@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tsp.android.hiui.tab.top.HiTabTopLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hi_top_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/white"
+    tools:context="com.tsp.android.test.tap.TabTopDemoActivity">
+
+</com.tsp.android.hiui.tab.top.HiTabTopLayout>

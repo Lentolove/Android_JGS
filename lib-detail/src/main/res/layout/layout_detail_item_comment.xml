@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comment_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_10"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/comment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_000"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        tools:text="商品评价(7789)" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_eee" />
+
+    <!--    商品评价标签，类似于流式布局-->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:visibility="gone"
+        app:chipSpacingHorizontal="@dimen/dp_10"
+        app:chipSpacingVertical="@dimen/dp_5"
+        tools:visibility="visible" />
+
+    <!--    商品评价详情条目-->
+    <LinearLayout
+        android:id="@+id/ll_comment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+</LinearLayout>

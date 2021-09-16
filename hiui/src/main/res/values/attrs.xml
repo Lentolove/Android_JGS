@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    自定义用户名，密码输入样式-->
+    <declare-styleable name="InputItemLayout">
+        <!--        默认提示-->
+        <attr name="hint" format="string" />
+        <!--        显示的内容-->
+        <attr name="title" format="string" />
+        <!--        文本最大输入长度-->
+        <attr name="maxInputLength" format="integer" />
+        <!--        输入类型，字符，密码，数字-->
+        <attr name="inputType" format="enum">
+            <enum name="text" value="0" />
+            <enum name="password" value="1" />
+            <enum name="number" value="2" />
+        </attr>
+        <!--        输入文本的样式 styleable-->
+        <attr name="inputTextAppearance" format="reference" />
+        <attr name="titleTextAppearance" format="reference" />
+        <attr name="topLineAppearance" format="reference" />
+        <attr name="bottomLineAppearance" format="reference" />
+    </declare-styleable>
+
+    <!--    提示文本样式-->
+    <declare-styleable name="inputTextAppearance">
+        <attr name="hintColor" format="color" />
+        <attr name="inputColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="titleTextAppearance">
+        <attr name="titleColor" format="color" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="minWidth" format="dimension" />
+    </declare-styleable>
+
+    <!--    分割线样式-->
+    <declare-styleable name="lineAppearance">
+        <attr name="color" format="color" />
+        <attr name="height" format="dimension" />
+        <attr name="leftMargin" format="dimension" />
+        <attr name="rightMargin" format="dimension" />
+        <!--        是否可见-->
+        <attr name="enable" format="boolean" />
+    </declare-styleable>
+
+
+    <!--    HiSliderView 样式-->
+    <declare-styleable name="HiSliderView">
+        <attr name="menuItemWidth" format="dimension" />
+        <attr name="menuItemHeight" format="dimension" />
+        <attr name="menuItemTextSize" format="dimension" />
+        <attr name="menuItemSelectTextSize" format="dimension" />
+        <attr name="menuItemIndicator" format="reference" />
+        <attr name="menuItemTextColor" format="reference" />
+        <attr name="menuItemBackGroundColor" format="color" />
+        <attr name="menuItemSelectBackGroundColor" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="HiBanner">
+        <attr name="autoPlay" format="boolean" />
+        <attr name="loop" format="boolean" />
+        <attr name="intervalTime" format="integer|reference" />
+    </declare-styleable>
+
+</resources>

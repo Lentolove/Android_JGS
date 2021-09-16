@@ -1,0 +1,88 @@
+
+
+{
+  "code": 200,
+  "msg": "请求成功",
+  "data": [
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品1",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品2",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品3",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品4",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品5",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "最近热销",
+      "categoryId": "1",
+      "subcategoryName": "商品1",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品2",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品3",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品4",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    },
+    {
+      "subcategoryId": "1",
+      "groupName": "热门分类",
+      "categoryId": "1",
+      "subcategoryName": "商品5",
+      "subcategoryIcon": "https://o.devio.org/images/as/images/2018-05-16/26c916947489c6b2ddd188ecdb54fd8d.png",
+      "showType": "1"
+    }
+  ]
+}

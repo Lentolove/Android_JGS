@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.tsp.android.test.TestActivity">
+
+    <Button
+        android:id="@+id/btn_bottom_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="底部导航" />
+
+    <Button
+        android:id="@+id/btn_top_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="顶部导航" />
+
+    <Button
+        android:id="@+id/btn_child_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下拉刷新" />
+
+
+    <Button
+        android:id="@+id/btn_hiSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分类tab显示" />
+
+    <Button
+        android:id="@+id/btn_http"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http请求" />
+
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义View" />
+
+    <Button
+        android:id="@+id/btn_child_crash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="触发crash" />
+
+
+    <Button
+        android:id="@+id/btn_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="详情页" />
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="首页" />
+
+
+
+
+</LinearLayout>

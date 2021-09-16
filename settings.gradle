@@ -1,0 +1,7 @@
+include ':lib_home'
+include ':lib-detail'
+include ':common'
+include ':hiui'
+include ':hilibrary'
+include ':app'
+rootProject.name = "Android_JGS"
