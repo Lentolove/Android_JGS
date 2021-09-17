@@ -4,15 +4,16 @@ plugins {
     id 'kotlin-kapt'
 }
 
+def ext = rootProject.ext
+def dependency = rootProject.ext.dependencies
+
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion ext.minSdkVersion
+        targetSdkVersion ext.targetSdkVersion
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -34,20 +35,15 @@ android {
 }
 
 dependencies {
-    
-    implementation fileTree(dir: 'libs', include: ['*.jar',"*.aar"])
 
-    def room_version = "2.2.0-alpha01"
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    implementation fileTree(dir: 'libs', include: ['*.jar', "*.aar"])
 
+    implementation dependency.room_runtime
+    kapt dependency.room_compiler
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation dependency.kotlin_stdlib
+    implementation dependency.core_ktx
+    implementation dependency.appcompat
+    implementation dependency.material
 
 }
