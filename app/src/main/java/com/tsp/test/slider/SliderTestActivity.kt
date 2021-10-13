@@ -9,7 +9,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bumptech.glide.Glide
 import com.tsp.android.common.ext.loadUrl
 import com.tsp.android.hiui.slider.HiSliderView
 import com.tsp.android.jgs.R
@@ -23,8 +22,6 @@ class SliderTestActivity : AppCompatActivity() {
 
     private lateinit var sliderView: HiSliderView
 
-    private val subcategoryListCache = mutableMapOf<String, List<Subcategory>>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slider_test)
@@ -32,7 +29,6 @@ class SliderTestActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[SliderViewModel::class.java]
         observer()
     }
-
 
     private fun observer() {
         viewModel.queryCategoryList().observe(this) {
@@ -90,16 +86,18 @@ class SliderTestActivity : AppCompatActivity() {
         }
     }
 
-    private val subcategoryList = mutableListOf<Subcategory>()
-
-    private val layoutManager = GridLayoutManager(this, SPAN_COUNT)
-
-    private val groupSpanSizeOffset = SparseIntArray()
-
     private val decoration = CategoryItemDecoration({ position ->
         subcategoryList[position].groupName
     }, SPAN_COUNT)
 
+    //子条目列表数据集合
+    private val subcategoryList = mutableListOf<Subcategory>()
+
+    //网格布局
+    private val layoutManager = GridLayoutManager(this, SPAN_COUNT)
+
+    //存储当前分组条目的偏移量之和，累加试的
+    private val groupSpanSizeOffset = SparseIntArray()
 
     private val spanSizeLookUp = object : GridLayoutManager.SpanSizeLookup() {
 
@@ -108,29 +106,31 @@ class SliderTestActivity : AppCompatActivity() {
             val groupName: String = subcategoryList[position].groupName
             val nextGroupName: String? =
                 if (position + 1 < subcategoryList.size) subcategoryList[position + 1].groupName else null
-
+            //当前位置 item 与 下一个 item 统一个分组，则当前 item 的 spanSize = 1
             if (TextUtils.equals(groupName, nextGroupName)) {
                 spanSize = 1
             } else {
-                //当前位置和 下一个位置 不再同一个分组
-                //1 .要拿到当前组 position （所在组）在 groupSpanSizeOffset 的索引下标
-                //2 .拿到 当前组前面一组 存储的 spansizeoffset 偏移量
-                //3 .给当前组最后一个item 分配 spansize count
+                //当前位置和 下一个位置 不再同一个分组，此时需要计算当前 item 需要将剩余的 spanCount 占完，比如当前 spanCount = 3，如果 item 位于第一个位置，则需要占用 3 列。
+                //1.要拿到当前组 position （所在组）在 groupSpanSizeOffset 的索引下标
+                //2.拿到 当前组前面一组 存储的 spanSizeOffset 偏移量
+                //3.给当前组最后一个item 分配 spanSize count
                 val indexOfKey = groupSpanSizeOffset.indexOfKey(position)
                 val size = groupSpanSizeOffset.size()
-                val lastGroupOffset = if (size <= 0) 0
+                //上一个分组的偏移量
+                val lastGroupOffset =
+                if (size <= 0) 0
                 else if (indexOfKey >= 0) {
                     //说明当前组的偏移量记录，已经存在了 groupSpanSizeOffset ，这个情况发生在上下滑动，
                     if (indexOfKey == 0) 0 else groupSpanSizeOffset.valueAt(indexOfKey - 1)
                 } else {
-                    //说明当前组的偏移量记录，还没有存在于 groupSpanSizeOffset ，这个情况发生在 第一次布局的时候
-                    //得到前面所有组的偏移量之和
+                    //说明当前组的偏移量记录还没有存在于 groupSpanSizeOffset ，这个情况发生在第一次布局的时候，得到前面所有组的偏移量之和。
                     groupSpanSizeOffset.valueAt(size - 1)
                 }
                 //          3       -     (6     +    5               % 3  )第几列=0  ，1 ，2
+                //当前 item 需要把当前分组的的最后一行占满，比如网格布局的一行为 3 个。此时这个 item 位于第一列，因为这一行只有一个 item了，所以需要占用三列。那么此时的偏移量为 2，总的偏移量为之前的偏移量之和。
                 spanSize = SPAN_COUNT - (position + lastGroupOffset) % SPAN_COUNT
                 if (indexOfKey < 0) {
-                    //得到当前组 和前面所有组的spansize 偏移量之和
+                    //得到当前组 和前面所有组的spanSize 偏移量之和
                     val groupOffset = lastGroupOffset + spanSize - 1
                     groupSpanSizeOffset.put(position, groupOffset)
                 }

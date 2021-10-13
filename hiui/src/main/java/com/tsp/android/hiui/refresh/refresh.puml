@@ -1,0 +1,88 @@
+@startuml
+
+interface HiRefresh{
+    void setDisableRefreshScroll(boolean disableRefreshScroll); //刷新时是否禁止滚动
+
+    void refreshFinished();//刷新完成回调
+
+    void setRefreshListener(HiRefresh.HiRefreshListener hiRefreshListener);//设置下拉刷新的监听器
+
+     void setRefreshOverView(HiOverView hiOverView);//设置下拉刷新的视图
+}
+
+interface HiRefreshListener {
+
+    void onRefresh();//正在刷新接口回调
+
+    boolean enableRefresh();//是否开启下拉刷新
+}
+
+abstract class HiOverView extends FrameLayout{
+    //下拉刷新头部视图
+
+     + HiRefreshState mState = HiRefreshState.STATE_INIT;//头部视图状态
+     + int mPullRefreshHeight;//触发下拉刷新 需要的最小高度
+     + float minDamp = 1.6f;//最小阻尼
+     + float maxDamp = 2.2f;//最大阻尼
+
+     -  void onScroll(int scrollY, int pullRefreshHeight);//视图滚动回调
+
+     -  void onVisible();//头部下拉视图显示回调
+
+     -  void onOver();//超过Overlay,下拉刷新的最大距离，释放就会加载
+
+     -  void onRefresh();//开始加载回调
+
+     -  void onFinish();//加载完成回调
+
+     - void setState(HiRefreshState state);//更新状态
+
+     - HiRefreshState getState();//获取当前状态
+
+}
+
+class HiTextOverView extends HiOverView{
+    //文本样式的刷新视图
+}
+
+class HiLottieOverView extends HiOverView{
+    //自定义动画类型视图
+}
+
+class HiRefreshLayout extends FrameLayout implements HiRefresh{
+
+    private HiOverView.HiRefreshState mState;//当前刷新状态
+
+    private GestureDetector mGestureDetector;    //手势监听
+
+    private AutoScroller mAutoScroller;    //自动滚动
+
+    private HiRefresh.HiRefreshListener mHiRefreshListener;    //刷新结果回调
+
+    protected HiOverView mHiOverView;    //刷新显示的布局
+
+    private boolean disableRefreshScroll;    //刷新时是否禁止滚动
+
+}
+enum HiRefreshState {
+       # STATE_INIT,//初始态
+       # STATE_VISIBLE,//Header展示的状态
+       # STATE_OVER,//超出可刷新距离的状态
+       # STATE_REFRESH,// 刷新中的状态
+       # STATE_OVER_RELEASE//超出刷新位置松开手后的状态
+}
+
+HiRefreshState --* HiOverView
+HiOverView --* HiRefreshLayout
+HiTextOverView --* HiRefreshLayout
+HiLottieOverView --* HiRefreshLayout
+HiRefreshListener --> HiRefresh
+
+note left of HiRefreshState:定义下拉刷新的枚举类状态
+note left of HiOverView:头部刷新控件抽象类，子类只需要继承\n该类来加载不同的视图或者动画
+
+note left of HiRefreshListener:为HiRefreshLayout设置监听器，监听 onRefresh \n状态做相应的逻辑，及是否禁止下拉刷新
+
+note left of HiRefreshLayout:下拉刷新根布局，处理手势，更新视图状态根据拖拽距离来 \n 显示和隐藏header，借助Scroller实现视图的自动滚动
+
+@enduml

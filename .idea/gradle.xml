@@ -16,8 +16,10 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/hilibrary" />
             <option value="$PROJECT_DIR$/hiui" />
-            <option value="$PROJECT_DIR$/lib-detail" />
-            <option value="$PROJECT_DIR$/lib_home" />
+            <option value="$PROJECT_DIR$/mall_detail" />
+            <option value="$PROJECT_DIR$/mall_home" />
+            <option value="$PROJECT_DIR$/mall_search" />
+            <option value="$PROJECT_DIR$/zz_learnn" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

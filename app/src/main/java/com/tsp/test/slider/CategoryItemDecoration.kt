@@ -9,6 +9,12 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.tsp.android.hilibrary.utils.HiDisplayUtil
 
+/**
+ *     author : shengping.tian
+ *     time   : 2021/09/10
+ *     desc   : contentView 的 ItemDecoration
+ *     version: 1.0
+ */
 class CategoryItemDecoration(
     val callback: (Int) -> String,
     private val spanCount: Int
@@ -17,7 +23,6 @@ class CategoryItemDecoration(
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     init {
-
         paint.style = Paint.Style.FILL
         paint.color = Color.BLACK
         paint.isFakeBoldText = true
@@ -74,14 +79,15 @@ class CategoryItemDecoration(
             if (adapterPosition >= parent.adapter!!.itemCount || adapterPosition < 0) continue
             val groupName = callback(adapterPosition)
             //判断当前位置 是不是分组的第一个位置
-            //如果是，咱们在他的位置上绘制标题
+            //如果是，在他的位置上绘制标题
             val groupFirstPosition = groupFirstPositions[groupName]
             if (groupFirstPosition == adapterPosition) {
                 val decorationBounds = Rect()
-                //为了拿到当前item 的 左上右下的坐标信息 包含了，margin 和 扩展空间的
+                //为了拿到当前item 的 左上右下的坐标信息 包含了 margin 和 padding 空间的
                 parent.getDecoratedBoundsWithMargins(view, decorationBounds)
                 val textBounds = Rect()
                 paint.getTextBounds(groupName, 0, groupName.length, textBounds)
+                //将 GroupName 文字画上去
                 c.drawText(
                     groupName,
                     HiDisplayUtil.dp2px(16f).toFloat(),

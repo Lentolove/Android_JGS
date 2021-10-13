@@ -109,5 +109,4 @@ internal object SliderAttrsParse {
         states[1] = IntArray(1)
         return ColorStateList(states, colors)
     }
-
 }

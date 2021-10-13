@@ -1,3 +1,0 @@
-<resources>
-    <string name="shop_desc" formatted="false">商品数量：%s 已拼：%s </string>
-</resources>

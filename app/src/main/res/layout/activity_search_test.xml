@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.tsp.android.hiui.search.HiSearchView
+        android:id="@+id/searchView"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingLeft="10dp"
+        app:key_word_max_length="20"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:hint_gravity="hint_center"
+        app:hint_text="请输入你喜欢的商品" />
+
+</LinearLayout>

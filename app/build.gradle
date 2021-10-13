@@ -21,9 +21,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
     }
@@ -63,8 +63,8 @@ dependencies {
     //动画型加载框
     implementation "com.airbnb.android:lottie:3.3.0"
     implementation project(path: ':common')
-    implementation project(path: ':lib-detail')
-    implementation project(path: ':lib_home')
+    implementation project(path: ':mall_detail')
+    implementation project(path: ':mall_home')
 
     implementation dependency.fastjson
 

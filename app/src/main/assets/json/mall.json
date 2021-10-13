@@ -1,0 +1,84 @@
+
+{
+    "errno": 0,
+    "data": {
+        "total": 49,
+        "pages": 5,
+        "limit": 10,
+        "page": 1,
+        "list": [
+            {
+                "id": 1001000,
+                "name": "MUJI制造商",
+                "desc": "严选精选了MUJI制造商和生产原料，\n用几乎零利润的价格，剔除品牌溢价，\n让用户享受原品牌的品质生活。",
+                "picUrl": "http://yanxuan.nosdn.127.net/1541445967645114dd75f6b0edc4762d.png",
+                "floorPrice": 12.90
+            },
+            {
+                "id": 1001002,
+                "name": "内野制造商",
+                "desc": "严选从世界各地挑选毛巾，最终选择了为日本内野代工的工厂，追求毛巾的柔软度与功能性。品质比肩商场几百元的毛巾。",
+                "picUrl": "http://yanxuan.nosdn.127.net/8ca3ce091504f8aa1fba3fdbb7a6e351.png",
+                "floorPrice": 29.00
+            },
+            {
+                "id": 1001003,
+                "name": "Adidas制造商",
+                "desc": "严选找到为Adidas等品牌制造商，\n选取优质原材料，与厂方一起设计，\n为你提供好的理想的运动装备。",
+                "picUrl": "http://yanxuan.nosdn.127.net/335334d0deaff6dc3376334822ab3a2f.png",
+                "floorPrice": 49.00
+            },
+            {
+                "id": 1001007,
+                "name": "优衣库制造商",
+                "desc": "严选找到日本知名服装UNIQLO的制造商，\n选取优质长绒棉和精梳工艺，\n与厂方一起设计，为你提供理想的棉袜。",
+                "picUrl": "http://yanxuan.nosdn.127.net/0d72832e37e7e3ea391b519abbbc95a3.png",
+                "floorPrice": 29.00
+            },
+            {
+                "id": 1001008,
+                "name": "膳魔师制造商",
+                "desc": "严选深入保温行业内部，\n找到德国膳魔师制造商的代工厂。\n同样的品质，却有更优的价格。",
+                "picUrl": "http://yanxuan.nosdn.127.net/5fd51e29b9459dae7df8040c8219f241.png",
+                "floorPrice": 45.00
+            },
+            {
+                "id": 1001010,
+                "name": "星巴克制造商",
+                "desc": "严选寻访全国保温杯制造企业，\n最终找到高端咖啡品牌星巴克的制造商，\n专注保温杯生产20年，品质与颜值兼备。",
+                "picUrl": "http://yanxuan.nosdn.127.net/5668bc50f2f2e551891044525710dc84.png",
+                "floorPrice": 39.00
+            },
+            {
+                "id": 1001012,
+                "name": "Wedgwood制造商",
+                "desc": "严选寻访英国皇室御用陶瓷Wedgwood制造商，\n制模到成品，历经25道工序、7次检验、3次烧制，\n你看不见的地方，我们也在坚持。",
+                "picUrl": "http://yanxuan.nosdn.127.net/68940e8e23f96dbeb3548d943d83d5e4.png",
+                "floorPrice": 39.00
+            },
+            {
+                "id": 1001013,
+                "name": "Royal Doulton制造商",
+                "desc": "严选深入英国最大骨瓷品牌Royal Doulton制造商， \n顶级英国瓷器的代名词，广受世界皇室喜爱。\n每件瓷器，都有自己的故事。",
+                "picUrl": "http://yanxuan.nosdn.127.net/0de643a02043fd9680b11e21c452adaa.png",
+                "floorPrice": 24.90
+            },
+            {
+                "id": 1001015,
+                "name": "日本KEYUCA制造商",
+                "desc": "KEYUCA是日本餐具及料理用具品牌，\n遵循极简原木风，高端餐具体验。\n严选的餐具正是来自这一品牌制造商。",
+                "picUrl": "http://yanxuan.nosdn.127.net/9b85b45f23da558be101dbcc273b1d6d.png",
+                "floorPrice": 14.90
+            },
+            {
+                "id": 1001016,
+                "name": "爱慕制造商",
+                "desc": "150家样品比对筛选，20家工厂深入走访，\n严选最终选定高端内衣爱慕制造商，\n20年品质保证，为你打造天然舒适的衣物。",
+                "picUrl": "http://yanxuan.nosdn.127.net/5104f84110eac111968c63c18ebd62c0.png",
+                "floorPrice": 35.00
+            }
+        ]
+    },
+    "errmsg": "成功"
+}
+

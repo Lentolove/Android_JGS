@@ -66,6 +66,23 @@
         android:layout_height="wrap_content"
         android:text="首页" />
 
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索框" />
+
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="调试" />
+
+    <Button
+        android:id="@+id/btn_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="城市选择器" />
 
 
 

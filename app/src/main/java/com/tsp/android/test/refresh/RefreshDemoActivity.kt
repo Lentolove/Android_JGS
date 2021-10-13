@@ -22,12 +22,11 @@ class RefreshDemoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_refresh_demo)
 
         val refreshLayout = findViewById<HiRefreshLayout>(R.id.hiRefresh)
-//        val xOverView = HiTextOverView(this)
+        val xOverView = HiTextOverView(this)
 
-        val lottieOverView =
-                HiLottieOverView(this)
+//        val lottieOverView = HiLottieOverView(this)
 
-        refreshLayout.setRefreshOverView(lottieOverView)
+        refreshLayout.setRefreshOverView(xOverView)
         refreshLayout.setRefreshListener(object : HiRefresh.HiRefreshListener {
             override fun onRefresh() {
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -46,7 +45,7 @@ class RefreshDemoActivity : AppCompatActivity() {
 
     private fun initView() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val data = arrayOf("HiRefresh", "HiRefresh", "HiRefresh", "HiRefresh", "HiRefresh", "HiRefresh", "HiRefresh")
+        val data = arrayOf("RefreshItem", "RefreshItem", "RefreshItem", "RefreshItem", "RefreshItem", "RefreshItem", "RefreshItem")
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         val mAdapter = MyAdapter(data)

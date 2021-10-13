@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_eee"
+    tools:context=".DetailActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/detail_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tsp.android.hiui.title.NavigationBar
+        android:id="@+id/detail_navBar"
+        android:layout_width="match_parent"
+        app:nav_title="商品详情"
+        android:layout_height="@dimen/dp_70"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:nav_line_height="0px" />
+
+    <LinearLayout
+        android:id="@+id/detail_bottom"
+        android:layout_width="match_parent"
+        android:background="@color/color_white"
+        android:layout_height="@dimen/dp_58"
+        android:layout_marginTop="@dimen/dp_1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.tsp.android.hiui.view.IconFontTextView
+            android:id="@+id/detail_action_favorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/detail_collect"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/detail_action_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_de3"
+            android:gravity="center"
+            android:text="￥29元\n现在购买"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_14"
+            tools:text="￥29元\n现在购买" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

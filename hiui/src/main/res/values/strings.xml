@@ -51,5 +51,6 @@
     <!--    蓝色提示小图标-->
     <string name="if_detail">&#xeb93;</string>
     <string name="empty_view_refresh">刷新</string>
+    <string name="city_selector_tab_hint">请选择</string>
 
 </resources>

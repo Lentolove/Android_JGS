@@ -97,11 +97,13 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
     }
 
 
-
-    //手势监听分发
+    /**
+     * 手指往下滑动， distanceY 为负数
+     */
     HiGestureDetector hiGestureDetector = new HiGestureDetector() {
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            Log.e(TAG, "onScroll distanceY：" + distanceY);
             if (Math.abs(distanceX) > Math.abs(distanceY) || mHiRefreshListener != null && !mHiRefreshListener.enableRefresh()) {
                 //横向滑动距离大于纵向滑动距离  不处理，或者设置不支持下拉刷新 enableRefresh，则该事件统一不处理，返回 false
                 return false;
@@ -216,10 +218,9 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
      *
      * @param offsetY 偏移量
      * @param nonAuto 是否非自动滚动触发
-     * @return
      */
     private boolean moveDown(int offsetY, boolean nonAuto) {
-        Log.i(TAG,"moveDown changeState = " + nonAuto);
+        Log.i(TAG,"moveDown nonAuto  = " + nonAuto);
         //todo 需要添加默认的 Header,以及解决界面空布局出现下拉刷新异常
         View head = getChildAt(0);
         View child = getChildAt(1);

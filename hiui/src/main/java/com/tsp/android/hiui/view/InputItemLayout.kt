@@ -46,12 +46,9 @@ class InputItemLayout : LinearLayout {
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
-    constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(
-        context,
-        attributeSet,
-        defStyle
-    ) {
-        //1.Set a drawable to be used as a divider between items.
+    constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
+
+        //1.LinearLayout 支持设置一个 drawable 用作 item 之间的分隔线
         dividerDrawable = ColorDrawable()
         //2.Set how dividers should be shown between items in this layout
         //            SHOW_DIVIDER_NONE,
@@ -59,6 +56,7 @@ class InputItemLayout : LinearLayout {
         //            SHOW_DIVIDER_MIDDLE,
         //            SHOW_DIVIDER_END
         showDividers = SHOW_DIVIDER_BEGINNING
+
         orientation = HORIZONTAL
 
         //3.加载自定义属性,获取完记得回收
@@ -73,7 +71,7 @@ class InputItemLayout : LinearLayout {
         val hint = array.getString(R.styleable.InputItemLayout_hint)
         val inputResId = array.getResourceId(R.styleable.InputItemLayout_inputTextAppearance, 0)
         val maxInputLength = array.getInteger(R.styleable.InputItemLayout_maxInputLength, 20)
-        //输入类型
+        //输入类型，数字，密码，文本等。
         val inputType = array.getInteger(R.styleable.InputItemLayout_inputType, 0)
         parseInputStyle(hint, inputResId, inputType, maxInputLength)
 
@@ -83,7 +81,7 @@ class InputItemLayout : LinearLayout {
         topLine = parseLineStyle(topResId)
         bottomLine = parseLineStyle(bottomResId)
 
-        //上边线可见
+        //上边线是否可见
         if (topLine.enable) {
             topPaint.color = topLine.color
             topPaint.style = Paint.Style.FILL_AND_STROKE
@@ -175,7 +173,8 @@ class InputItemLayout : LinearLayout {
             applyUnit(TypedValue.COMPLEX_UNIT_SP, 15f)
         )
         editTextView = EditText(context).apply {
-            filters = arrayOf(InputFilter.LengthFilter(maxInputLength))//最多可输入的字符数
+            //最多可输入的字符数
+            filters = arrayOf(InputFilter.LengthFilter(maxInputLength))
             setPadding(0, 0, 0, 0)
             val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
             params.weight = 1f//设置 editText 的权重
@@ -186,12 +185,16 @@ class InputItemLayout : LinearLayout {
             gravity = LEFT or CENTER
             setBackgroundColor(Color.TRANSPARENT)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
-            if (type == 0) {
-                inputType = InputType.TYPE_CLASS_TEXT
-            } else if (type == 1) {
-                inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD or InputType.TYPE_CLASS_TEXT
-            } else if (type == 2) {
-                inputType = InputType.TYPE_CLASS_NUMBER
+            when (type) {
+                0 -> {
+                    inputType = InputType.TYPE_CLASS_TEXT
+                }
+                1 -> {
+                    inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD or InputType.TYPE_CLASS_TEXT
+                }
+                2 -> {
+                    inputType = InputType.TYPE_CLASS_NUMBER
+                }
             }
         }
         addView(editTextView)
@@ -246,6 +249,4 @@ class InputItemLayout : LinearLayout {
         var rightMargin = 0f
         var enable = false
     }
-
-
 }

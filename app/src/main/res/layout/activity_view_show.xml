@@ -9,20 +9,21 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:padding="10dp"
-        android:text="自定义输入框" />
+        android:text="登录界面" />
 
     <com.tsp.android.hiui.view.InputItemLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:paddingLeft="16dp"
         app:bottomLineAppearance="@style/leftMargin_lineAppearance"
         app:hint="请输入用户名"
         app:inputTextAppearance="@style/inputTextAppearance"
         app:inputType="text"
         app:title="用户名"
-        android:paddingLeft="16dp"
         app:titleTextAppearance="@style/titleTextAppearance"
         app:topLineAppearance="@style/lineAppearance" />
 
@@ -36,5 +37,15 @@
         app:inputType="password"
         app:title="密码"
         app:titleTextAppearance="@style/titleTextAppearance" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="@dimen/dp_10"
+        android:backgroundTint="@color/color_127"
+        android:text="登录"
+        android:textColor="@color/color_eee"
+        android:textSize="16sp"
+        app:cornerRadius="@dimen/dp_6" />
 
 </LinearLayout>
