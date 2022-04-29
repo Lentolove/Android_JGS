@@ -30,6 +30,17 @@
         </activity>
         <activity android:name="com.tsp.test.search.SearchTestActivity" />
         <activity android:name="com.tsp.test.viewgroup.MViewGroupActivity" />
+        <activity android:name="com.tsp.touchevent.TouchEventActivity" />
+
+
+        <activity android:name="com.tsp.life.TestLifeActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+
+        </activity>
     </application>
 
 </manifest>

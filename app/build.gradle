@@ -70,12 +70,16 @@ dependencies {
 
     //retrofit
     implementation dependency.retrofit
+
     implementation dependency.gson
 
 
     //ARouter路由
     implementation dependency.arouter_api
+
     kapt dependency.arouter_compiler
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

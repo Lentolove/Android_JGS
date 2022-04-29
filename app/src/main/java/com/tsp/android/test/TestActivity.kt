@@ -1,9 +1,13 @@
 package com.tsp.android.test
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.launcher.ARouter
 import com.tsp.android.detail.DetailActivity
@@ -19,6 +23,7 @@ import com.tsp.test.http.HiRestfulActivity
 import com.tsp.test.slider.SliderTestActivity
 import com.tsp.test.view.ViewShowActivity
 import com.tsp.test.viewgroup.MViewGroupActivity
+import com.tsp.touchevent.TouchEventActivity
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -26,6 +31,7 @@ class TestActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityTestBinding
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityTestBinding.inflate(layoutInflater)
@@ -87,6 +93,12 @@ class TestActivity : AppCompatActivity() {
                 citySelector.show(supportFragmentManager, "city_selector")
             }
         }
+
+        mBinding.btnDispatch.setOnClickListener {
+            startActivity(Intent(this, TouchEventActivity::class.java))
+
+        }
+
     }
 
     private fun loadAssetsData(callback: (List<Province>) -> Unit) {

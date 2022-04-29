@@ -1,0 +1,59 @@
+@startuml
+autonumber
+'note over Activity : startActivity
+Activity --> Activity : startActivity
+Activity --> Activity : startActivityForResult
+'note left :  launcher启动 activity
+Activity -> Instrumentation : execStartActivity
+
+Instrumentation -> AMS : startActivity
+'AMS --> AMS : startActivityAsUser
+
+AMS -> ActivityTaskManagerService: startActivity
+
+ActivityTaskManagerService --> ActivityTaskManagerService: startActivityAsUser
+
+
+
+'ActivityStarter --> ActivityStarter: startActivityLocked
+note over ActivityStarter: 开启一个Activity的旅程
+ActivityStarter --> ActivityStarter: execute()
+note left: 做一些检查操作\nstartActivityUnchecked -> \nstartActivityInner开启activity
+'note left ActivityStarter: 内部创建了ActivityRecord
+ActivityStarter --> ActivityStarter: executeRequest
+ActivityStarter --> ActivityStarter: startActivityUnchecked\n确保ac启动成功,否则删除ac
+ActivityStarter --> ActivityStarter: startActivityInner
+note left :启动一个活动并确定该活动是\n否应该添加到现有任务的顶部\n或将新意图传递给现有活动。
+
+ActivityStarter -> ActivityStack:startActivityLocked
+note left:确定Activity的任务栈任务栈，启动
+
+ActivityStackSupervisor -> ActivityStack : resumeTopActivityUncheckedLocked
+
+ActivityStack --> ActivityStack: resumeTopActivityInnerLocked
+
+ActivityStack -> ActivityStackSupervisor: startSpecificActivityLocked
+
+ActivityStackSupervisor --> ActivityStackSupervisor: realStartActivityLocked
+
+ActivityStackSupervisor -> ApplicationThread: scheduleLaunchActivity
+
+ApplicationThread -> ActivityThread: sendMessage
+
+ActivityThread -> H: sendMessage
+
+H --> H: handleMessage
+
+H -> ActivityThread: handleLaunchActivity
+
+ActivityThread --> ActivityThread: performLaunchActivity
+
+ActivityThread -> Instrumentation: callActivityOnCreate
+
+Instrumentation -> Activity: performCreate
+
+Activity --> Activity:onCreate
+
+
+
+@enduml

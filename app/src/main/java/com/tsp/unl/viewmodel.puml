@@ -1,0 +1,24 @@
+@startuml
+class ViewModel{
+}
+
+interface ViewModelStoreOwner{
+     ViewModelStore getViewModelStore();
+}
+
+class ComponentActivity implements ViewModelStoreOwner{
+    ViewModelStore getViewModelStore();//调用父类 Activity 的 getLastNonConfigurationInstance 获取NonConfigurationInstances，没有则创建
+
+    Object onRetainNonConfigurationInstance();//在Activity即将销毁重建的时候调用
+
+}
+
+class Activity{
+    Object getLastNonConfigurationInstance();// 获取Activity 内部的 NonConfigurationInstances 实例
+}
+
+class ComponentActivity extends Activity{
+
+}
+
+@enduml

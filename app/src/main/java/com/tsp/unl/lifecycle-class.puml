@@ -1,0 +1,63 @@
+@startuml
+
+abstract class Lifecycle{
+    + void addObserver(LifecycleObserver observer);//添加观察者
+    + void removeObserver(LifecycleObserver observer);//移除观察者
+    + State getCurrentState();//获取当前状态
+}
+
+enum State {
+    //生命周期状态
+   + DESTROYED
+   + INITIALIZED
+   + CREATED
+   + STARTED
+   + RESUMED
+   + boolean isAtLeast(State state)
+}
+
+enum Event{
+      //事件类型
+     + ON_CREATE
+     + ON_START
+     + ON_RESUME
+     + ON_PAUSE
+     + ON_STOP
+     + ON_DESTROY
+     + ON_ANY
+    + Event downFrom(State state);
+    + Event downTo(State state);
+    + Event upFrom(State state);
+    + Event upTo(State state);
+    + State getTargetState();
+}
+class LifecycleRegistry extends Lifecycle{
+'   //生命周期真正的分发者(持有者)，交给fragment来分发Event事件通知给所有的观察者
+
+
+   + FastSafeIterableMap<LifecycleObserver, ObserverWithState> mObserverMap;//值为带状态的观察者，
+   用于在宿主生命周期发生变化的时候，调用观察者对应的方法
+   + State mState; //当前状态
+
+
+   //将生命周期移动到给定状态，并将必要的事件分派给观察者
+   + void setCurrentState(State state);
+   //使用sync()把生命周期状态同步给所有观察者，把新的观察者的状态 连续地 同步到最新状态mState
+   + void moveToState(State next);//
+
+}
+
+interface LifecycleOwner{
+    + Lifecycle getLifecycle();//获取Lifecycle生命周期持有者
+}
+
+class ComponentActivity implements LifecycleOwner{
+    + LifecycleRegistry mLifecycleRegistry;//ComponentActivity的getLifecycle返回的是LifecycleRegistry
+}
+
+State -* Lifecycle
+Event -* Lifecycle
+
+LifecycleRegistry -> ComponentActivity
+
+@enduml

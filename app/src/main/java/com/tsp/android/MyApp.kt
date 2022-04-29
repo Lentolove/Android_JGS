@@ -31,6 +31,7 @@ class MyApp : Application() {
     }
 
     private fun initLog() {
+        val externalCacheDir = applicationContext.externalCacheDir?.absolutePath
         HiLogManager.init(
             object : HiLogConfig() {
                 override fun getGlobalTag(): String {
@@ -49,7 +50,7 @@ class MyApp : Application() {
                     return 2
                 }
             },
-            HiConsolePrinter()
+            HiFilePrinter.getInstance(externalCacheDir,-1)
         )
     }
 

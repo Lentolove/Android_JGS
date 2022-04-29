@@ -1,0 +1,31 @@
+@startuml
+skinparam sequenceArrowThickness 1
+skinparam roundcorner 20
+skinparam maxmessagesize 60
+
+ComponentActivity -> ReportFragment : injectIfNeededIn(this) 通过注入一个fragment来监听生命周期变化
+
+activate ReportFragment
+
+ReportFragment -> ReportFragment: dispatch
+
+ReportFragment -> LifecycleRegistry: handleLifecycleEvent 调用LifecycleRegistry分发生命周期事件
+
+deactivate ReportFragment
+activate LifecycleRegistry
+
+LifecycleRegistry -> LifecycleRegistry: moveToState 移动到下一个状态
+
+LifecycleRegistry -> LifecycleRegistry: sync 将状态同步给所有观察者状态
+LifecycleRegistry -> LifecycleRegistry: forwardPass
+
+LifecycleRegistry -> ObserverWithState : dispatchEvent 分发生命周期事件
+deactivate LifecycleRegistry
+
+ObserverWithState -> ReflectiveGenericLifecycleObserver: onStateChanged
+
+ReflectiveGenericLifecycleObserver -> CallbackInfo: invokeCallbacks
+
+CallbackInfo -> LifecycleObserve : method.invoke 调用对应生命周期事件方法
+
+@enduml
