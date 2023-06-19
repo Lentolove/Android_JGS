@@ -26,5 +26,8 @@ class MainActivity : AppCompatActivity() {
         mBinding.btnRecyclerview.setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
         }
+        mBinding.progressTest.setOnClickListener {
+            startActivity(Intent(this, ProgressBarActivity::class.java))
+        }
     }
 }

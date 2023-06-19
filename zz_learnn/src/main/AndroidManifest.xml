@@ -27,6 +27,7 @@
         <activity android:name=".recyclerview.RecycledSecondRemouldActivity" />
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".recyclerview.StaggeredActivity" />
+        <activity android:name=".ProgressBarActivity" />
     </application>
 
 </manifest>
