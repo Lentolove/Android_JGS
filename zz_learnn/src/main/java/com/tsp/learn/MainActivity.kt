@@ -3,6 +3,7 @@ package com.tsp.learn
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tsp.learn.anim.AnimActivity
 import com.tsp.learn.databinding.ActivityMainBinding
 import com.tsp.learn.recyclerview.RecyclerActivity
 import com.tsp.learn.viewpager.ViewPagerActivity
@@ -28,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         }
         mBinding.progressTest.setOnClickListener {
             startActivity(Intent(this, ProgressBarActivity::class.java))
+        }
+        mBinding.animTest.setOnClickListener {
+            startActivity(Intent(this, AnimActivity::class.java))
         }
     }
 }

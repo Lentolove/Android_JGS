@@ -28,6 +28,7 @@
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".recyclerview.StaggeredActivity" />
         <activity android:name=".ProgressBarActivity" />
+        <activity android:name=".anim.AnimActivity" />
     </application>
 
 </manifest>

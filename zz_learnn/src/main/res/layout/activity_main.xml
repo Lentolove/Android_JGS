@@ -27,5 +27,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="进度条测试" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/anim_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动画测试" />
 
 </LinearLayout>
