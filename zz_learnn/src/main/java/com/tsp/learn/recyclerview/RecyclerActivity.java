@@ -65,6 +65,11 @@ public class RecyclerActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        findViewById(R.id.layout_rv).setOnClickListener(v -> {
+            Intent intent = new Intent(RecyclerActivity.this,RvLayoutActivity.class);
+            startActivity(intent);
+        });
+
 
     }
 }

@@ -15,7 +15,7 @@ import com.tsp.android.hilibrary.executor.HiExecutor
 import com.tsp.android.hilibrary.utils.MainHandler
 import com.tsp.android.hiui.cityselector.*
 import com.tsp.android.hiui.cityselector.entity.ProvinceEntity
-import com.tsp.android.jgs.databinding.ActivityTestBinding
+//import com.tsp.android.jgs.databinding.ActivityTestBinding
 import com.tsp.android.test.refresh.RefreshDemoActivity
 import com.tsp.android.test.tap.TabTopDemoActivity
 import com.tsp.android.test.tap.TestMainActivity
@@ -29,77 +29,78 @@ import java.io.InputStreamReader
 
 class TestActivity : AppCompatActivity() {
 
-    private lateinit var mBinding: ActivityTestBinding
+//    private lateinit var mBinding: ActivityTestBinding
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = ActivityTestBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
-        initView()
+//        mBinding = ActivityTestBinding.inflate(layoutInflater)
+//        setContentView(mBinding.root)
+//        initView()
     }
 
-    private fun initView() {
-        mBinding.btnBottomTest.setOnClickListener {
-            val intent = Intent(this, TestMainActivity::class.java)
-            startActivity(intent)
-        }
-        mBinding.btnTopTest.setOnClickListener {
-            val intent = Intent(this, TabTopDemoActivity::class.java)
-            startActivity(intent)
-        }
-        mBinding.btnChildCount.setOnClickListener {
-            val intent = Intent(this, RefreshDemoActivity::class.java)
-            startActivity(intent)
-        }
-        mBinding.btnHiSlider.setOnClickListener {
-            startActivity(Intent(this, SliderTestActivity::class.java))
-        }
-        mBinding.btnHttp.setOnClickListener {
-            startActivity(Intent(this, HiRestfulActivity::class.java))
-        }
-        mBinding.btnView.setOnClickListener {
-            startActivity(Intent(this, ViewShowActivity::class.java))
-
-        }
-        mBinding.btnDetail.setOnClickListener {
-            startActivity(Intent(this, DetailActivity::class.java))
-        }
-
-        mBinding.btnHome.setOnClickListener {
-            ARouter.getInstance().build("/activity/main").navigation()
-        }
-
-        mBinding.btnSearch.setOnClickListener {
-            ARouter.getInstance().build("/mall/search").navigation()
-        }
-        mBinding.btnTest.setOnClickListener {
-            startActivity(Intent(this, MViewGroupActivity::class.java))
-        }
-
-        mBinding.btnCity.setOnClickListener {
-            loadAssetsData {
-                val citySelector = CitySelectorDialog.newInstance(null, it)
-                citySelector.setCitySelectListener(object :
-                    CitySelectorDialog.IOnCitySelectListener {
-                    override fun onCitySelect(province: Province) {
-                        Toast.makeText(
-                            this@TestActivity,
-                            "province = ${province.districtName}, city = ${province.selectCity?.districtName}, area = ${province.selectDistrict?.districtName}" ,
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                })
-                citySelector.show(supportFragmentManager, "city_selector")
-            }
-        }
-
-        mBinding.btnDispatch.setOnClickListener {
-            startActivity(Intent(this, TouchEventActivity::class.java))
-
-        }
-
-    }
+//    private fun initView() {
+//        mBinding.btnBottomTest.setOnClickListener {
+////            val intent = Intent(this, TestMainActivity::class.java)
+////            startActivity(intent)
+//            startService(Intent(this,Testservice::class.java))
+//        }
+//        mBinding.btnTopTest.setOnClickListener {
+//            val intent = Intent(this, TabTopDemoActivity::class.java)
+//            startActivity(intent)
+//        }
+//        mBinding.btnChildCount.setOnClickListener {
+//            val intent = Intent(this, RefreshDemoActivity::class.java)
+//            startActivity(intent)
+//        }
+//        mBinding.btnHiSlider.setOnClickListener {
+//            startActivity(Intent(this, SliderTestActivity::class.java))
+//        }
+//        mBinding.btnHttp.setOnClickListener {
+//            startActivity(Intent(this, HiRestfulActivity::class.java))
+//        }
+//        mBinding.btnView.setOnClickListener {
+//            startActivity(Intent(this, ViewShowActivity::class.java))
+//
+//        }
+//        mBinding.btnDetail.setOnClickListener {
+//            startActivity(Intent(this, DetailActivity::class.java))
+//        }
+//
+//        mBinding.btnHome.setOnClickListener {
+//            ARouter.getInstance().build("/activity/main").navigation()
+//        }
+//
+//        mBinding.btnSearch.setOnClickListener {
+//            ARouter.getInstance().build("/mall/search").navigation()
+//        }
+//        mBinding.btnTest.setOnClickListener {
+//            startActivity(Intent(this, MViewGroupActivity::class.java))
+//        }
+//
+//        mBinding.btnCity.setOnClickListener {
+//            loadAssetsData {
+//                val citySelector = CitySelectorDialog.newInstance(null, it)
+//                citySelector.setCitySelectListener(object :
+//                    CitySelectorDialog.IOnCitySelectListener {
+//                    override fun onCitySelect(province: Province) {
+//                        Toast.makeText(
+//                            this@TestActivity,
+//                            "province = ${province.districtName}, city = ${province.selectCity?.districtName}, area = ${province.selectDistrict?.districtName}" ,
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
+//                })
+//                citySelector.show(supportFragmentManager, "city_selector")
+//            }
+//        }
+//
+//        mBinding.btnDispatch.setOnClickListener {
+//            startActivity(Intent(this, TouchEventActivity::class.java))
+//
+//        }
+//
+//    }
 
     private fun loadAssetsData(callback: (List<Province>) -> Unit) {
         HiExecutor.execute(runnable = {

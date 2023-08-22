@@ -14,7 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.tsp.test.view.ViewShowActivity"/>
+        <service
+            android:name="com.tsp.android.test.Testservice"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <activity android:name="com.tsp.test.view.ViewShowActivity" />
         <activity android:name="com.tsp.test.http.HiRestfulActivity" />
         <activity android:name="com.tsp.test.slider.SliderTestActivity" />
         <activity android:name="com.tsp.android.test.Test2Activity" />

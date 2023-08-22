@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../../layout/custom_preview.xml" value="0.4962962962962963" />
+        <entry key="learning/src/main/res/layout/activity_animal.xml" value="0.5369791666666667" />
+        <entry key="learning/src/main/res/layout/main_activity.xml" value="0.5369791666666667" />
+        <entry key="learning/src/main/res/layout/thread_test_activity.xml" value="0.5369791666666667" />
+        <entry key="zz_learnn/src/main/res/layout/activity_main.xml" value="0.5369791666666667" />
+        <entry key="zz_learnn/src/main/res/layout/diff_test_activity.xml" value="0.5369791666666667" />
+        <entry key="zz_learnn/src/main/res/layout/item_student.xml" value="0.5369791666666667" />
+        <entry key="zz_learnn/src/main/res/layout/livedata_test_activity.xml" value="0.5369791666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="liberica-1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

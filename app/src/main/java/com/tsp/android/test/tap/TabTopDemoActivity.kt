@@ -28,5 +28,6 @@ class TabTopDemoActivity : AppCompatActivity() {
             Toast.makeText(this,"点击了${index}", Toast.LENGTH_SHORT).show()
         }
 
+
     }
 }

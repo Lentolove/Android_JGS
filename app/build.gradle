@@ -45,6 +45,7 @@ android {
     viewBinding {
         enabled = true
     }
+
 }
 
 dependencies {
@@ -80,6 +81,9 @@ dependencies {
     kapt dependency.arouter_compiler
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

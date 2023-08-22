@@ -74,6 +74,13 @@
             android:layout_height="wrap_content"
             android:text="RecyclerView画廊"/>
 
+
+        <Button
+            android:id="@+id/layout_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="间距布局"/>
+
     </LinearLayout>
 
 </ScrollView>

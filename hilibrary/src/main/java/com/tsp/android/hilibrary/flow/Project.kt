@@ -17,7 +17,6 @@ class Project private constructor(id: String) : Task(id) {
 
     override fun removeBehind(task: Task) {
         endTask.removeBehind(task)
-        endTask.removeBehind(task)
     }
 
     override fun removeDependence(task: Task) {

@@ -4,6 +4,7 @@ import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.tsp.android.hilibrary.log.*
 import com.tsp.android.jgs.BuildConfig
+import com.tsp.android.test.task.TaskStartUp
 
 /**
  *     author : shengping.tian
@@ -17,7 +18,7 @@ class MyApp : Application() {
         super.onCreate()
         initARouter()
         initLog()
-//        TaskStartUp.start()
+        TaskStartUp.start()
 //        CrashMgr.init()
     }
 
