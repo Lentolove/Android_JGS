@@ -4,10 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.tsp.android.hilibrary.utils.HiDataBus
+import android.os.Environment
+import android.provider.MediaStore
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.tsp.learn.anim.AnimActivity
+import com.tsp.learn.camera.CameraActivity
 import com.tsp.learn.databinding.ActivityMainBinding
+import com.tsp.learn.memory.MemoryActivity
 import com.tsp.learn.recyclerview.RecyclerActivity
 import com.tsp.learn.viewpager.ViewPagerActivity
+import java.io.File
+import java.io.IOException
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         initData()
+
+        initTest()
     }
 
     private fun initData() {
@@ -38,5 +49,49 @@ class MainActivity : AppCompatActivity() {
         HiDataBus.with<String>("test_data").observe(this){
             mBinding.animTest.text = it
         }
+        mBinding.btnMemory.setOnClickListener {
+            startActivity(Intent(this, MemoryActivity::class.java))
+        }
+        mBinding.cameraBtn.setOnClickListener {
+            InputTextDialogFragment.Builder().showNow(supportFragmentManager)
+//            startActivity(Intent(this,CameraActivity::class.java))
+//            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//            val outFile: File = File(
+//                Environment.getExternalStorageDirectory().getAbsolutePath()
+//                    .toString() + "/000/" + System.currentTimeMillis() + ".jpg"
+//            )
+//            if (!outFile.exists()){
+//                outFile.mkdirs()
+//            }
+//            val uri = FileProvider.getUriForFile(
+//                this,
+//                "$packageName.fileProvider",
+//                outFile
+//            )
+//            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
+//            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+//            startActivity(intent)
+
+        }
+        mBinding.autoScrollerView.apply {
+//            setInAnimation(this@MainActivity, R.anim.show_anim)
+//            setOutAnimation(this@MainActivity, R.anim.hide_anim)
+            setText("这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试")
+        }
+
+        mBinding.autoBtn.setOnClickListener {
+//            mBinding.autoScrollerView.setText("这是测试这是测试\n这是测试这是测试")
+            mBinding.autoScrollerView.next();
+        }
+    }
+
+
+    private fun initTest(){
+        val am: ActivityManager = this.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val runningAppProcesses = am.runningAppProcesses
+        runningAppProcesses.forEach {
+            Log.d("tsp===>",it.processName)
+        }
+
     }
 }

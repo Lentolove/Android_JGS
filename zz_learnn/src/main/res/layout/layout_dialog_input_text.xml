@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/title_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6f6f6f"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/cover_lay">
+
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:paddingStart="24dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/cover_lay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/switch_tv"
+            android:layout_width="88dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="打字"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="88dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="88dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/cover_lay"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#60ff0000"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:layout_width="5dp"
+        android:background="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="1054px"
+        android:layout_marginStart="100dp"
+        android:layout_height="5dp"/>
+
+    <View
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:background="#6000ff00"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

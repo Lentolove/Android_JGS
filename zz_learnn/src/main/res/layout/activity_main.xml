@@ -21,6 +21,13 @@
         android:layout_height="wrap_content"
         android:text="Recyclerview示例" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_memory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内存测试" />
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/progress_test"
@@ -37,5 +44,33 @@
         android:id="@+id/test_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/camera_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/auto_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="继续" />
+
+
+    <com.tsp.learn.view.AutoScrollerView
+        android:id="@+id/auto_scroller_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 
 </LinearLayout>

@@ -142,13 +142,61 @@ class AnimActivity : AppCompatActivity() {
 
 
         // ValueAnimator 均匀回调
-        val valueAnimator = ObjectAnimator.ofInt(1, 100)
-        valueAnimator.addUpdateListener {
-            Log.d(TAG, " addUpdateListener value ===  ${it.animatedValue}")
+//        val valueAnimator = ObjectAnimator.ofInt(1, 100)
+//        valueAnimator.addUpdateListener {
+//            Log.d(TAG, " addUpdateListener value ===  ${it.animatedValue}")
+//        }
+//        valueAnimator.duration = 60_000
+//        valueAnimator.start()
+        mBinding.expandAnim.setOnClickListener {
+            menuAnim(true)
         }
-        valueAnimator.duration = 60_000
-        valueAnimator.start()
+        mBinding.closeAnim.setOnClickListener {
+            menuAnim(false)
+        }
 
+    }
+
+    private fun menuAnim(isExpand: Boolean){
+        val layoutParams = mBinding.menuLay.layoutParams
+        val startHeight = if (isExpand) dip2px(32f) else dip2px(222f)
+        val endHeight = if (isExpand) dip2px(222f) else dip2px(32f)
+        val startWidth = if (isExpand) dip2px(32f) else dip2px(40f)
+        val endWidth = if (isExpand) dip2px(40f) else dip2px(32f)
+        val widthAnim =  ObjectAnimator.ofInt(startWidth.toInt(), endWidth.toInt())
+        widthAnim.addUpdateListener {
+            val width = it.animatedValue as Int
+            if (layoutParams.width != width){
+                layoutParams.width = width
+                mBinding.menuLay.layoutParams = layoutParams
+                Log.d(TAG, "width = : " + width)
+            }
+        }
+        val expandAnim =  ObjectAnimator.ofInt(startHeight.toInt(), endHeight.toInt())
+        expandAnim.addUpdateListener {
+            val height = it.animatedValue as Int
+            if (layoutParams.height != height){
+                layoutParams.height = height
+                mBinding.menuLay.layoutParams = layoutParams
+                Log.d(TAG, "height = : " + height)
+            }
+        }
+        val startAngle = if (isExpand) 0f else 45f
+        val endAngle = if (isExpand) 45f else 0f
+        val transAnim = ObjectAnimator.ofFloat(mBinding.menuIv, "rotation",startAngle, endAngle)
+        AnimatorSet().apply {
+            play(expandAnim).with(transAnim).with(widthAnim)//a 在b之前播放
+            duration = 300
+            start()
+        }
+    }
+
+    var density = 0f
+
+    fun dip2px( dpValue: Float): Float {
+        if (density > 0) return (dpValue * density + 0.5f)
+        density = resources.displayMetrics.density
+        return (dpValue * density + 0.5f)
     }
 }
 

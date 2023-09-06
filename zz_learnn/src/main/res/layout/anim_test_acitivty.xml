@@ -36,6 +36,7 @@
 
 
     <LinearLayout
+        android:id="@+id/alpha_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -67,11 +68,108 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/expand_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/alpha_lay">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/expand_anim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="展开" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/close_anim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="关闭" />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu_lay"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_b2000000_corner20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expand_lay">
+
+        <ImageView
+            android:id="@+id/menu_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:src="@mipmap/icon_list_immortal_16"
+            android:layout_height="20dp"/>
+
+        <ImageView
+            android:id="@+id/icon_iv1"
+            app:layout_constraintTop_toBottomOf="@+id/menu_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:src="@mipmap/icon_warorder"
+            android:layout_height="20dp"/>
+
+        <ImageView
+            android:id="@+id/icon_iv2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_iv1"
+            android:layout_marginTop="22dp"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:src="@mipmap/icon_warorder"
+            android:layout_height="20dp"/>
+
+        <ImageView
+            android:id="@+id/icon_iv3"
+            android:layout_marginTop="22dp"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_iv2"
+            android:src="@mipmap/icon_warorder"
+            android:layout_height="20dp"/>
+
+        <ImageView
+            android:layout_marginTop="26dp"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_iv3"
+            android:src="@mipmap/icon_warorder"
+            android:layout_height="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <View
         android:id="@+id/center_view"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="#ff0000"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
