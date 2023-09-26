@@ -1,16 +1,23 @@
 package com.tsp.learn
 
+import android.app.ActivityManager
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Outline
+import android.graphics.Path
+import android.graphics.RectF
 import android.os.Bundle
 import com.tsp.android.hilibrary.utils.HiDataBus
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.view.ViewOutlineProvider
 import androidx.appcompat.app.AppCompatActivity
 import com.tsp.learn.anim.AnimActivity
 import com.tsp.learn.camera.CameraActivity
 import com.tsp.learn.databinding.ActivityMainBinding
+import com.tsp.learn.font.FontTestActivity
 import com.tsp.learn.memory.MemoryActivity
 import com.tsp.learn.recyclerview.RecyclerActivity
 import com.tsp.learn.viewpager.ViewPagerActivity
@@ -46,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 //            startActivity(Intent(this, AnimActivity::class.java))
             startActivity(Intent(this, LiveDataActivity::class.java))
         }
-        HiDataBus.with<String>("test_data").observe(this){
+        HiDataBus.with<String>("test_data").observe(this) {
             mBinding.animTest.text = it
         }
         mBinding.btnMemory.setOnClickListener {
@@ -83,14 +90,20 @@ class MainActivity : AppCompatActivity() {
 //            mBinding.autoScrollerView.setText("这是测试这是测试\n这是测试这是测试")
             mBinding.autoScrollerView.next();
         }
+
+
+        mBinding.fontTest.setOnClickListener {
+            FontTestActivity.go(this)
+        }
+
     }
 
 
-    private fun initTest(){
+    private fun initTest() {
         val am: ActivityManager = this.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         val runningAppProcesses = am.runningAppProcesses
         runningAppProcesses.forEach {
-            Log.d("tsp===>",it.processName)
+            Log.d("tsp===>", it.processName)
         }
 
     }

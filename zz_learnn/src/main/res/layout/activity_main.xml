@@ -40,8 +40,9 @@
         android:layout_height="wrap_content"
         android:text="动画测试" />
 
-    <TextView
-        android:id="@+id/test_tv"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/font_test"
+        android:text="字体测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -70,6 +71,13 @@
         android:id="@+id/auto_scroller_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
+    <com.tsp.learn.view.CircleFrameLayout
+        android:id="@+id/frame_view"
+        android:background="#60ff0000"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
 
 
 

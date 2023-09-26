@@ -39,6 +39,7 @@
         <activity android:name=".camera.CameraActivity" />
         <activity android:name=".LiveDataActivity" />
         <activity android:name=".recyclerview.RvLayoutActivity" />
+        <activity android:name=".font.FontTestActivity" />
     </application>
 
 </manifest>
