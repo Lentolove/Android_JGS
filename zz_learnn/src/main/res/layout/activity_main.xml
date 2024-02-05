@@ -64,7 +64,7 @@
         android:id="@+id/auto_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="继续" />
+        android:text="修改app图标" />
 
 
     <com.tsp.learn.view.AutoScrollerView
@@ -73,11 +73,17 @@
         android:layout_height="wrap_content"/>
 
 
-    <com.tsp.learn.view.CircleFrameLayout
+    <com.tsp.learn.view.RadiusCardView
         android:id="@+id/frame_view"
-        android:background="#60ff0000"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="200dp">
+
+        <ImageView
+            android:background="#60ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.tsp.learn.view.RadiusCardView>
 
 
 

@@ -3,4 +3,16 @@
     <declare-styleable name="LeftDeleteView">
         <attr name="deleteBtnWidth" format="float"/>
     </declare-styleable>
+    <declare-styleable name="RadiusCardView">
+        <!--        左上圆角大小-->
+        <attr name="rcv_topLeftRadius" format="dimension" />
+        <!--        右上圆角大小-->
+        <attr name="rcv_topRightRadius" format="dimension" />
+        <!--        右下圆角大小-->
+        <attr name="rcv_bottomRightRadius" format="dimension" />
+        <!--        左下圆角大小-->
+        <attr name="rcv_bottomLeftRadius" format="dimension" />
+
+        <attr name="allRadius" format="dimension" />
+    </declare-styleable>
 </resources>

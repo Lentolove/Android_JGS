@@ -1,20 +1,23 @@
 package com.tsp.learn
 
 import android.app.ActivityManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Outline
 import android.graphics.Path
 import android.graphics.RectF
 import android.os.Bundle
-import com.tsp.android.hilibrary.utils.HiDataBus
-import android.os.Environment
 import android.provider.MediaStore
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.view.ViewOutlineProvider
 import androidx.appcompat.app.AppCompatActivity
+import com.didichuxing.doraemonkit.DoKit
 import com.tsp.learn.anim.AnimActivity
+import com.tsp.learn.anim.XiuxianAnimActivity
 import com.tsp.learn.camera.CameraActivity
 import com.tsp.learn.databinding.ActivityMainBinding
 import com.tsp.learn.font.FontTestActivity
@@ -37,58 +40,40 @@ class MainActivity : AppCompatActivity() {
         initData()
 
         initTest()
+
+        DoKit.Builder(this.application)
+            .productId("")
+            .build()
     }
 
     private fun initData() {
         mBinding.btnViewpager.setOnClickListener {
-            startActivity(Intent(this, ViewPagerActivity::class.java))
+//            startActivity(Intent(this, ViewPagerActivity::class.java))
+            mBinding.frameView.setCornersRadius(tlRadius = 100f)
         }
         mBinding.btnRecyclerview.setOnClickListener {
-            startActivity(Intent(this, RecyclerActivity::class.java))
+            mBinding.frameView.setAllCornerRadius(100f)
+
+//            startActivity(Intent(this, RecyclerActivity::class.java))
         }
         mBinding.progressTest.setOnClickListener {
             startActivity(Intent(this, ProgressBarActivity::class.java))
         }
         mBinding.animTest.setOnClickListener {
-//            startActivity(Intent(this, AnimActivity::class.java))
-            startActivity(Intent(this, LiveDataActivity::class.java))
+            startActivity(Intent(this, XiuxianAnimActivity::class.java))
         }
-        HiDataBus.with<String>("test_data").observe(this) {
-            mBinding.animTest.text = it
-        }
+
         mBinding.btnMemory.setOnClickListener {
             startActivity(Intent(this, MemoryActivity::class.java))
         }
         mBinding.cameraBtn.setOnClickListener {
-            InputTextDialogFragment.Builder().showNow(supportFragmentManager)
-//            startActivity(Intent(this,CameraActivity::class.java))
-//            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//            val outFile: File = File(
-//                Environment.getExternalStorageDirectory().getAbsolutePath()
-//                    .toString() + "/000/" + System.currentTimeMillis() + ".jpg"
-//            )
-//            if (!outFile.exists()){
-//                outFile.mkdirs()
-//            }
-//            val uri = FileProvider.getUriForFile(
-//                this,
-//                "$packageName.fileProvider",
-//                outFile
-//            )
-//            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
-//            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-//            startActivity(intent)
-
+            changeLogo("com.tsp.learn.default")
         }
         mBinding.autoScrollerView.apply {
-//            setInAnimation(this@MainActivity, R.anim.show_anim)
-//            setOutAnimation(this@MainActivity, R.anim.hide_anim)
-            setText("这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试")
         }
 
         mBinding.autoBtn.setOnClickListener {
-//            mBinding.autoScrollerView.setText("这是测试这是测试\n这是测试这是测试")
-            mBinding.autoScrollerView.next();
+            changeLogo("com.tsp.learn.new")
         }
 
 
@@ -97,6 +82,34 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    fun changeLogo(name: String) {
+        if (TextUtils.equals(name, componentName.className)) return
+        val pm = packageManager
+        pm.setComponentEnabledSetting(
+            componentName,
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP
+        )
+        pm.setComponentEnabledSetting(
+            ComponentName(this, name),
+            PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP
+        )
+        reStartApp(pm)
+    }
+
+    private fun reStartApp(pm: PackageManager) {
+        val am = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.addCategory(Intent.CATEGORY_HOME)
+        intent.addCategory(Intent.CATEGORY_DEFAULT)
+        val resolveInfos = pm.queryIntentActivities(intent, 0)
+        for (resolveInfo in resolveInfos) {
+            if (resolveInfo.activityInfo != null) {
+                am.killBackgroundProcesses(resolveInfo.activityInfo.packageName)
+            }
+        }
+    }
+
 
 
     private fun initTest() {

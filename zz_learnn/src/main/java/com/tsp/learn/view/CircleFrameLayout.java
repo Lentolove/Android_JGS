@@ -25,7 +25,7 @@ public class CircleFrameLayout extends FrameLayout {
 
     private final Paint clipPaint = new Paint();
     private Path path = new Path();
-    private float radius = 10;
+    private float radius = 100;
     private boolean needNewPath = true;
 
     public CircleFrameLayout(Context context) {
