@@ -7,7 +7,7 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_viewpager"
@@ -64,7 +64,22 @@
         android:id="@+id/auto_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="修改app图标" />
+        android:text="执行耗时方法" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/thread_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程信息" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/coordinator_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="吸顶布局" />
+
+
 
 
     <com.tsp.learn.view.AutoScrollerView

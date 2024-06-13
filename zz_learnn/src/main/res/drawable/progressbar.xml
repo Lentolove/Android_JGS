@@ -17,6 +17,5 @@
             </shape>
         </clip>
     </item>
-    <corners android:radius="100dp" />
 
 </layer-list>
