@@ -9,3 +9,4 @@ include ':app'
 rootProject.name = "Android_JGS"
 include ':kotlin'
 include ':testprofile'
+include ':logger'

@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+def ext = rootProject.ext
+def dependency = rootProject.ext.dependencies
+
+
+android {
+  compileSdkVersion ext.compileSdkVersion
+  buildToolsVersion ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion ext.minSdkVersion
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+
+}
+
+dependencies {
+  implementation "androidx.annotation:annotation:1.0.0"
+
+//  testImplementation "org.robolectric:robolectric:3.3"
+//  testImplementation "org.mockito:mockito-core:2.8.9"
+  testImplementation "org.json:json:20180813"
+}

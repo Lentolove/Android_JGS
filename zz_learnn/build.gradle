@@ -39,6 +39,7 @@ android {
 dependencies {
 
     implementation project(path: ':hilibrary')
+    implementation project(path: ':logger')
 
     debugImplementation "io.github.didi.dokit:dokitx:3.5.0"
 

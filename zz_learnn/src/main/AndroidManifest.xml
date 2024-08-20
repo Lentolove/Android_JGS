@@ -48,6 +48,7 @@
         <activity android:name=".anim.XiuxianAnimActivity" />
         <activity android:name=".thread.ThreadInfoActivity" />
         <activity android:name=".coordinatorlayout.CoordinatorLayoutActivity" />
+        <activity android:name=".log.LoggerTestActivity" />
     </application>
 
 </manifest>

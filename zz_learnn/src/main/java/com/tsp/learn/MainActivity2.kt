@@ -9,6 +9,7 @@ import com.tsp.learn.anim.XiuxianAnimActivity
 import com.tsp.learn.coordinatorlayout.CoordinatorLayoutActivity
 import com.tsp.learn.databinding.ActivityMainBinding
 import com.tsp.learn.font.FontTestActivity
+import com.tsp.learn.log.LoggerTestActivity
 import com.tsp.learn.memory.MemoryActivity
 import com.tsp.learn.recyclerview.RecyclerActivity
 import com.tsp.learn.thread.ThreadInfoActivity
@@ -64,6 +65,9 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(Intent(this, CoordinatorLayoutActivity::class.java))
         }
 
+        mBinding.loggerBtn.setOnClickListener {
+            startActivity(Intent(this, LoggerTestActivity::class.java))
+        }
     }
 
     private fun runTime (){

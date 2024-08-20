@@ -79,6 +79,12 @@
         android:layout_height="wrap_content"
         android:text="吸顶布局" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logger_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="日志" />
+
 
 
 
