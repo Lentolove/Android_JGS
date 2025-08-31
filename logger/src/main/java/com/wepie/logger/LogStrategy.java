@@ -1,4 +1,4 @@
-package com.orhanobut.logger;
+package com.wepie.logger;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

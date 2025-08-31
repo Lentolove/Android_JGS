@@ -1,7 +1,6 @@
-package com.orhanobut.logger;
+package com.wepie.logger;
 
 import android.app.Application;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import androidx.annotation.NonNull;
@@ -12,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.orhanobut.logger.Utils.checkNotNull;
+import static com.wepie.logger.Utils.checkNotNull;
 
 /**
  * CSV formatted file logging for Android.

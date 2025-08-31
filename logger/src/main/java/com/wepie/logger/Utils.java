@@ -1,4 +1,4 @@
-package com.orhanobut.logger;
+package com.wepie.logger;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,12 +8,12 @@ import java.io.StringWriter;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
-import static com.orhanobut.logger.Logger.ASSERT;
-import static com.orhanobut.logger.Logger.DEBUG;
-import static com.orhanobut.logger.Logger.ERROR;
-import static com.orhanobut.logger.Logger.INFO;
-import static com.orhanobut.logger.Logger.VERBOSE;
-import static com.orhanobut.logger.Logger.WARN;
+import static com.wepie.logger.Logger.ASSERT;
+import static com.wepie.logger.Logger.DEBUG;
+import static com.wepie.logger.Logger.ERROR;
+import static com.wepie.logger.Logger.INFO;
+import static com.wepie.logger.Logger.VERBOSE;
+import static com.wepie.logger.Logger.WARN;
 
 /**
  * Provides convenient methods to some common operations

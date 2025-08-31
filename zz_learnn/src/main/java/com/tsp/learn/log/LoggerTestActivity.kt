@@ -2,11 +2,11 @@ package com.tsp.learn.log
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.DiskLogAdapter
-import com.orhanobut.logger.FormatStrategy
-import com.orhanobut.logger.Logger
-import com.orhanobut.logger.PrettyFormatStrategy
+import com.wepie.logger.AndroidLogAdapter
+import com.wepie.logger.DiskLogAdapter
+import com.wepie.logger.FormatStrategy
+import com.wepie.logger.Logger
+import com.wepie.logger.PrettyFormatStrategy
 import com.tsp.learn.databinding.LoggerTestActivityBinding
 
 /**

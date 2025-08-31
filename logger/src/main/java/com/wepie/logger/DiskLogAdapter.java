@@ -1,9 +1,9 @@
-package com.orhanobut.logger;
+package com.wepie.logger;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import static com.orhanobut.logger.Utils.checkNotNull;
+import static com.wepie.logger.Utils.checkNotNull;
 
 import android.app.Application;
 
