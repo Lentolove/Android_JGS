@@ -41,7 +41,7 @@ dependencies {
     implementation project(path: ':hilibrary')
     implementation project(path: ':logger')
 
-    debugImplementation "io.github.didi.dokit:dokitx:3.5.0"
+//    debugImplementation "io.github.didi.dokit:dokitx:3.5.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'

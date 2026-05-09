@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.didichuxing.doraemonkit.DoKit
 import com.tsp.learn.anim.XiuxianAnimActivity
 import com.tsp.learn.coordinatorlayout.CoordinatorLayoutActivity
 import com.tsp.learn.databinding.ActivityMainBinding
