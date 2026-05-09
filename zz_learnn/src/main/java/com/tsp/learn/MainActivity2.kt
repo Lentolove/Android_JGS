@@ -11,6 +11,7 @@ import com.tsp.learn.font.FontTestActivity
 import com.tsp.learn.log.LoggerTestActivity
 import com.tsp.learn.memory.MemoryActivity
 import com.tsp.learn.recyclerview.RecyclerActivity
+import com.tsp.learn.recyclerview.diff.DiffTestActivity
 import com.tsp.learn.thread.ThreadInfoActivity
 import com.tsp.learn.viewpager.ViewPagerActivity
 import java.lang.Exception
@@ -33,6 +34,9 @@ class MainActivity2 : AppCompatActivity() {
         }
         mBinding.btnRecyclerview.setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
+        }
+        mBinding.btnDiff.setOnClickListener {
+            startActivity(Intent(this, DiffTestActivity::class.java))
         }
         mBinding.progressTest.setOnClickListener {
             startActivity(Intent(this, ProgressBarActivity::class.java))
