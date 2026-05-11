@@ -10,6 +10,7 @@ import com.tsp.learn.databinding.ActivityMainBinding
 import com.tsp.learn.font.FontTestActivity
 import com.tsp.learn.log.LoggerTestActivity
 import com.tsp.learn.memory.MemoryActivity
+import com.tsp.learn.coroutines.CoroutineDemoActivity
 import com.tsp.learn.recyclerview.RecyclerActivity
 import com.tsp.learn.recyclerview.diff.DiffTestActivity
 import com.tsp.learn.thread.ThreadInfoActivity
@@ -70,6 +71,11 @@ class MainActivity2 : AppCompatActivity() {
 
         mBinding.loggerBtn.setOnClickListener {
             startActivity(Intent(this, LoggerTestActivity::class.java))
+        }
+        mBinding.btnModernArch.setOnClickListener {
+        }
+        mBinding.btnCoroutines.setOnClickListener {
+            startActivity(Intent(this, CoroutineDemoActivity::class.java))
         }
     }
 

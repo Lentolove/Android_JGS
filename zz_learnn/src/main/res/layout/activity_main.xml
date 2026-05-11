@@ -91,6 +91,18 @@
         android:layout_height="wrap_content"
         android:text="日志" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_modern_arch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="现代架构 · 无事件总线" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_coroutines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="协程全面学习 · 30个Demo" />
+
 
 
 

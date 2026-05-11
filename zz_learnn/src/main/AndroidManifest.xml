@@ -50,6 +50,8 @@
         <activity android:name=".coordinatorlayout.CoordinatorLayoutActivity" />
         <activity android:name=".log.LoggerTestActivity" />
         <activity android:name=".recyclerview.diff.DiffTestActivity" />
+        <activity android:name=".modernarch.ModernArchActivity" />
+        <activity android:name=".coroutines.CoroutineDemoActivity" />
     </application>
 
 </manifest>
